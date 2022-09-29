@@ -10,50 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef COLOUR_H
 
-int	num_len(long n)
-{
-	int	len;
+# define COLOUR_H
 
-	len = 0;
-	if (n < 0)
-	{
-		n = n * -1;
-		len++;
-	}
-	while (n > 0)
-	{
-		n = (n / 10);
-		len++;
-	}
-	return (len);
-}
+# define COLOUR_SILVER		0xCCCCCC
+# define COLOUR_TUNDORA		0x444444
 
-char	*ft_itoa(int n)
-{
-	char	*str;
-	int		len;
-	long	nbr;
-
-	nbr = n;
-	len = num_len(n);
-	str = malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	str[len--] = '\0';
-	if (nbr == 0)
-		str[0] = 48;
-	if (nbr < 0)
-	{
-		str[0] = '-';
-		nbr = nbr * -1;
-	}
-	while (nbr > 0)
-	{
-		str[len] = 48 + (nbr % 10);
-		nbr = nbr / 10;
-		len--;
-	}
-	return (str);
-}
+#endif

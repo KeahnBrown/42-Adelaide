@@ -1,0 +1,1 @@
+type "./fractol help" to show list of fractols
